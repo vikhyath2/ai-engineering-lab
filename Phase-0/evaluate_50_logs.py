@@ -23,7 +23,8 @@ def main():
     parser.add_argument('--run', action='store_true', help='Make paid OpenAI API requests')
     parser.add_argument('--limit', type=int, default=5, help='How many examples to run (max 50)')
     args = parser.parse_args()
-    cases = json.loads(Path('spark_test_cases_50.json').read_text())
+    cases_path = Path(__file__).resolve().parent / "spark_test_cases_50.json"
+    cases = json.loads(cases_path.read_text(encoding="utf-8"))
     assert len(cases) == 50, 'Expected 50 test cases'
     assert len({case['id'] for case in cases}) == 50, 'Duplicate IDs'
     for case in cases:

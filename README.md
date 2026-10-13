@@ -74,32 +74,75 @@ git clone https://github.com/vikhyath2/ai-engineering-lab.git
 cd ai-engineering-lab
 ```
 
-Create and activate a Python environment:
+Create and activate a Python virtual environment:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Install the dependencies:
+Install dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-Set your OpenAI API key locally:
+Set your OpenAI API key for exercises requiring API access:
 
 ```bash
 export OPENAI_API_KEY="your-api-key"
 ```
 
-Run an example evaluation:
+Never commit API keys or sensitive logs.
+
+## Running Automated Tests
+
+Phase 0 includes six automated regression tests built
+with Python's unittest framework.
+
+Run all tests from the repository root:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Current tests cover:
+
+- Validation of the 50-case dataset size
+- Verification of unique test-case IDs
+- Pydantic validation of valid Spark errors
+- Nullable stage ID handling
+- Rejection of invalid exception-name formats
+- Rejection of missing required fields
+
+Latest local result: 6 tests passed.
+
+These tests do not require OpenAI API calls.
+
+## Running the 50-Log Evaluation
+
+Validate the dataset without API calls:
 
 ```bash
 python Phase-0/evaluate_50_logs.py
 ```
 
-**Note:** API usage may incur charges. Use synthetic test logs and never commit API keys or sensitive information.
+Evaluate five cases using the OpenAI API:
+
+```bash
+python Phase-0/evaluate_50_logs.py --run --limit 5
+```
+
+Evaluate all 50 cases:
+
+```bash
+python Phase-0/evaluate_50_logs.py --run --limit 50
+```
+
+The last two commands make billable API requests.
+
+Dataset validation has passed for 50 unique labeled cases.
+Full model evaluation results have not yet been verified.
 
 ## Learning Roadmap
 
@@ -115,11 +158,23 @@ python Phase-0/evaluate_50_logs.py
 ## Key Lessons
 
 - Structured responses make AI outputs easier to integrate with applications.
-- Pydantic validates data structure, but factual accuracy requires separate testing.
-- Token usage, latency, and cost can vary significantly across model configurations.
-- Evaluation datasets help identify recurring extraction failures.
-- Reliable AI applications require more than a successful API response.
+- Pydantic validates data structure but does not guarantee factual accuracy.
+- Token usage, latency, and cost vary across model configurations.
+- Evaluation datasets help identify extraction failures.
+- Automated regression tests help detect unexpected changes.
+- Reliable AI applications require more than successful API responses.
 
 ## Project Status
 
-In progress — Phase 0 exercises are being documented and verified before moving to Phase 1.
+Phase 0 implementation and initial automated tests completed.
+
+Current verification:
+- 50 unique labeled Spark log cases validated.
+- 6 automated regression tests passed.
+- Dataset validation runs without API charges.
+
+Full model accuracy benchmarking and additional reliability
+testing remain future improvements.
+
+Engineering observations are documented in
+[Phase 0 Notes](Phase-0/NOTES.md).
