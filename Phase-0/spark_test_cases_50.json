@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "log": "2026-10-10 08:00:00 ERROR Executor - AnalysisException: Column 'customer_id' cannot be resolved..",
+    "expected": {
+      "error_class": "AnalysisException",
+      "stage_id": null,
+      "table": null,
+      "likely_cause": "Unresolved column"
+    }
+  },
+  {
+    "id": 2,
+    "log": "WARN SparkJob: java.lang.OutOfMemoryError: Java heap space\nStage: 9\ndataset=transactions",
+    "expected": {
+      "error_class": "OutOfMemoryError",
+      "stage_id": 9,
+      "table": "transactions",
+      "likely_cause": "Java heap exhausted"
+    }
+  },
+  {
+    "id": 3,
+    "log": "FileNotFoundException: File not found at /data/sales_raw.parquet; for table sales_raw; stageId=12",
+    "expected": {
+      "error_class": "FileNotFoundException",
+      "stage_id": 12,
+      "table": "sales_raw",
+      "likely_cause": "Missing input file"
+    }
+  },
+  {
+    "id": 4,
+    "log": "Spark application failed: java.lang.NullPointerException: Unexpected null reference.  stage 15  Table: payments",
+    "expected": {
+      "error_class": "NullPointerException",
+      "stage_id": 15,
+      "table": "payments",
+      "likely_cause": "Unexpected null"
+    }
+  },
+  {
+    "id": 5,
+    "log": "2026-10-10 08:04:00 ERROR Executor - TimeoutException: Executor heartbeat timed out. Stage: 18. dataset=employee_records",
+    "expected": {
+      "error_class": "TimeoutException",
+      "stage_id": 18,
+      "table": "employee_records",
+      "likely_cause": "Executor timed out"
+    }
+  },
+  {
+    "id": 6,
+    "log": "WARN SparkJob: java.lang.NumberFormatException: For input string: 'abc'\nstageId=21\nfor table customer_events",
+    "expected": {
+      "error_class": "NumberFormatException",
+      "stage_id": 21,
+      "table": "customer_events",
+      "likely_cause": "Invalid numeric value"
+    }
+  },
+  {
+    "id": 7,
+    "log": "IllegalArgumentException: Invalid partition argument; Table: product_dim; stage 24",
+    "expected": {
+      "error_class": "IllegalArgumentException",
+      "stage_id": 24,
+      "table": "product_dim",
+      "likely_cause": "Invalid argument"
+    }
+  },
+  {
+    "id": 8,
+    "log": "Spark application failed: java.lang.ClassNotFoundException: com.example.CustomUDF.   dataset=inventory_snapshot",
+    "expected": {
+      "error_class": "ClassNotFoundException",
+      "stage_id": null,
+      "table": "inventory_snapshot",
+      "likely_cause": "Missing class"
+    }
+  },
+  {
+    "id": 9,
+    "log": "2026-10-10 08:08:00 ERROR Executor - FetchFailedException: Failed to fetch shuffle block. stageId=30. for table clickstream",
+    "expected": {
+      "error_class": "FetchFailedException",
+      "stage_id": 30,
+      "table": "clickstream",
+      "likely_cause": "Shuffle fetch failed"
+    }
+  },
+  {
+    "id": 10,
+    "log": "WARN SparkJob: java.lang.ArithmeticException: / by zero\nstage 33",
+    "expected": {
+      "error_class": "ArithmeticException",
+      "stage_id": 33,
+      "table": null,
+      "likely_cause": "Division by zero"
+    }
+  },
+  {
+    "id": 11,
+    "log": "AnalysisException: Column 'customer_id' cannot be resolved; dataset=shipments; Stage: 36",
+    "expected": {
+      "error_class": "AnalysisException",
+      "stage_id": 36,
+      "table": "shipments",
+      "likely_cause": "Unresolved column"
+    }
+  },
+  {
+    "id": 12,
+    "log": "Spark application failed: java.lang.OutOfMemoryError: Java heap space.  stageId=39  for table daily_metrics",
+    "expected": {
+      "error_class": "OutOfMemoryError",
+      "stage_id": 39,
+      "table": "daily_metrics",
+      "likely_cause": "Java heap exhausted"
+    }
+  },
+  {
+    "id": 13,
+    "log": "2026-10-10 08:12:00 ERROR Executor - FileNotFoundException: File not found at /data/warehouse_load.parquet. stage 42. Table: warehouse_load",
+    "expected": {
+      "error_class": "FileNotFoundException",
+      "stage_id": 42,
+      "table": "warehouse_load",
+      "likely_cause": "Missing input file"
+    }
+  },
+  {
+    "id": 14,
+    "log": "WARN SparkJob: java.lang.NullPointerException: Unexpected null reference\nStage: 45\ndataset=billing_events",
+    "expected": {
+      "error_class": "NullPointerException",
+      "stage_id": 45,
+      "table": "billing_events",
+      "likely_cause": "Unexpected null"
+    }
+  },
+  {
+    "id": 15,
+    "log": "TimeoutException: Executor heartbeat timed out; for table user_sessions;",
+    "expected": {
+      "error_class": "TimeoutException",
+      "stage_id": null,
+      "table": "user_sessions",
+      "likely_cause": "Executor timed out"
+    }
+  },
+  {
+    "id": 16,
+    "log": "Spark application failed: java.lang.NumberFormatException: For input string: 'abc'.  stage 4  Table: orders_daily",
+    "expected": {
+      "error_class": "NumberFormatException",
+      "stage_id": 4,
+      "table": "orders_daily",
+      "likely_cause": "Invalid numeric value"
+    }
+  },
+  {
+    "id": 17,
+    "log": "2026-10-10 08:16:00 ERROR Executor - IllegalArgumentException: Invalid partition argument. Stage: 7. dataset=transactions",
+    "expected": {
+      "error_class": "IllegalArgumentException",
+      "stage_id": 7,
+      "table": "transactions",
+      "likely_cause": "Invalid argument"
+    }
+  },
+  {
+    "id": 18,
+    "log": "WARN SparkJob: java.lang.ClassNotFoundException: com.example.CustomUDF\nstageId=10\nfor table sales_raw",
+    "expected": {
+      "error_class": "ClassNotFoundException",
+      "stage_id": 10,
+      "table": "sales_raw",
+      "likely_cause": "Missing class"
+    }
+  },
+  {
+    "id": 19,
+    "log": "FetchFailedException: Failed to fetch shuffle block;; stage 13",
+    "expected": {
+      "error_class": "FetchFailedException",
+      "stage_id": 13,
+      "table": null,
+      "likely_cause": "Shuffle fetch failed"
+    }
+  },
+  {
+    "id": 20,
+    "log": "Spark application failed: java.lang.ArithmeticException: / by zero.  Stage: 16  dataset=employee_records",
+    "expected": {
+      "error_class": "ArithmeticException",
+      "stage_id": 16,
+      "table": "employee_records",
+      "likely_cause": "Division by zero"
+    }
+  },
+  {
+    "id": 21,
+    "log": "2026-10-10 08:20:00 ERROR Executor - AnalysisException: Column 'customer_id' cannot be resolved. stageId=19. for table customer_events",
+    "expected": {
+      "error_class": "AnalysisException",
+      "stage_id": 19,
+      "table": "customer_events",
+      "likely_cause": "Unresolved column"
+    }
+  },
+  {
+    "id": 22,
+    "log": "WARN SparkJob: java.lang.OutOfMemoryError: Java heap space\n\nTable: product_dim",
+    "expected": {
+      "error_class": "OutOfMemoryError",
+      "stage_id": null,
+      "table": "product_dim",
+      "likely_cause": "Java heap exhausted"
+    }
+  },
+  {
+    "id": 23,
+    "log": "FileNotFoundException: File not found at /data/inventory_snapshot.parquet; dataset=inventory_snapshot; Stage: 25",
+    "expected": {
+      "error_class": "FileNotFoundException",
+      "stage_id": 25,
+      "table": "inventory_snapshot",
+      "likely_cause": "Missing input file"
+    }
+  },
+  {
+    "id": 24,
+    "log": "Spark application failed: java.lang.NullPointerException: Unexpected null reference.  stageId=28  for table clickstream",
+    "expected": {
+      "error_class": "NullPointerException",
+      "stage_id": 28,
+      "table": "clickstream",
+      "likely_cause": "Unexpected null"
+    }
+  },
+  {
+    "id": 25,
+    "log": "2026-10-10 08:24:00 ERROR Executor - TimeoutException: Executor heartbeat timed out. stage 31. Table: account_summary",
+    "expected": {
+      "error_class": "TimeoutException",
+      "stage_id": 31,
+      "table": "account_summary",
+      "likely_cause": "Executor timed out"
+    }
+  },
+  {
+    "id": 26,
+    "log": "WARN SparkJob: java.lang.NumberFormatException: For input string: 'abc'\nStage: 34\ndataset=shipments",
+    "expected": {
+      "error_class": "NumberFormatException",
+      "stage_id": 34,
+      "table": "shipments",
+      "likely_cause": "Invalid numeric value"
+    }
+  },
+  {
+    "id": 27,
+    "log": "IllegalArgumentException: Invalid partition argument; for table daily_metrics; stageId=37",
+    "expected": {
+      "error_class": "IllegalArgumentException",
+      "stage_id": 37,
+      "table": "daily_metrics",
+      "likely_cause": "Invalid argument"
+    }
+  },
+  {
+    "id": 28,
+    "log": "Spark application failed: java.lang.ClassNotFoundException: com.example.CustomUDF.  stage 40",
+    "expected": {
+      "error_class": "ClassNotFoundException",
+      "stage_id": 40,
+      "table": null,
+      "likely_cause": "Missing class"
+    }
+  },
+  {
+    "id": 29,
+    "log": "2026-10-10 08:28:00 ERROR Executor - FetchFailedException: Failed to fetch shuffle block.. dataset=billing_events",
+    "expected": {
+      "error_class": "FetchFailedException",
+      "stage_id": null,
+      "table": "billing_events",
+      "likely_cause": "Shuffle fetch failed"
+    }
+  },
+  {
+    "id": 30,
+    "log": "WARN SparkJob: java.lang.ArithmeticException: / by zero\nstageId=46\nfor table user_sessions",
+    "expected": {
+      "error_class": "ArithmeticException",
+      "stage_id": 46,
+      "table": "user_sessions",
+      "likely_cause": "Division by zero"
+    }
+  },
+  {
+    "id": 31,
+    "log": "AnalysisException: Column 'customer_id' cannot be resolved; Table: orders_daily; stage 2",
+    "expected": {
+      "error_class": "AnalysisException",
+      "stage_id": 2,
+      "table": "orders_daily",
+      "likely_cause": "Unresolved column"
+    }
+  },
+  {
+    "id": 32,
+    "log": "Spark application failed: java.lang.OutOfMemoryError: Java heap space.  Stage: 5  dataset=transactions",
+    "expected": {
+      "error_class": "OutOfMemoryError",
+      "stage_id": 5,
+      "table": "transactions",
+      "likely_cause": "Java heap exhausted"
+    }
+  },
+  {
+    "id": 33,
+    "log": "2026-10-10 08:32:00 ERROR Executor - FileNotFoundException: File not found at /data/sales_raw.parquet. stageId=8. for table sales_raw",
+    "expected": {
+      "error_class": "FileNotFoundException",
+      "stage_id": 8,
+      "table": "sales_raw",
+      "likely_cause": "Missing input file"
+    }
+  },
+  {
+    "id": 34,
+    "log": "WARN SparkJob: java.lang.NullPointerException: Unexpected null reference\nstage 11\nTable: payments",
+    "expected": {
+      "error_class": "NullPointerException",
+      "stage_id": 11,
+      "table": "payments",
+      "likely_cause": "Unexpected null"
+    }
+  },
+  {
+    "id": 35,
+    "log": "TimeoutException: Executor heartbeat timed out; dataset=employee_records; Stage: 14",
+    "expected": {
+      "error_class": "TimeoutException",
+      "stage_id": 14,
+      "table": "employee_records",
+      "likely_cause": "Executor timed out"
+    }
+  },
+  {
+    "id": 36,
+    "log": "Spark application failed: java.lang.NumberFormatException: For input string: 'abc'.   for table customer_events",
+    "expected": {
+      "error_class": "NumberFormatException",
+      "stage_id": null,
+      "table": "customer_events",
+      "likely_cause": "Invalid numeric value"
+    }
+  },
+  {
+    "id": 37,
+    "log": "2026-10-10 08:36:00 ERROR Executor - IllegalArgumentException: Invalid partition argument. stage 20.",
+    "expected": {
+      "error_class": "IllegalArgumentException",
+      "stage_id": 20,
+      "table": null,
+      "likely_cause": "Invalid argument"
+    }
+  },
+  {
+    "id": 38,
+    "log": "WARN SparkJob: java.lang.ClassNotFoundException: com.example.CustomUDF\nStage: 23\ndataset=inventory_snapshot",
+    "expected": {
+      "error_class": "ClassNotFoundException",
+      "stage_id": 23,
+      "table": "inventory_snapshot",
+      "likely_cause": "Missing class"
+    }
+  },
+  {
+    "id": 39,
+    "log": "FetchFailedException: Failed to fetch shuffle block; for table clickstream; stageId=26",
+    "expected": {
+      "error_class": "FetchFailedException",
+      "stage_id": 26,
+      "table": "clickstream",
+      "likely_cause": "Shuffle fetch failed"
+    }
+  },
+  {
+    "id": 40,
+    "log": "Spark application failed: java.lang.ArithmeticException: / by zero.  stage 29  Table: account_summary",
+    "expected": {
+      "error_class": "ArithmeticException",
+      "stage_id": 29,
+      "table": "account_summary",
+      "likely_cause": "Division by zero"
+    }
+  },
+  {
+    "id": 41,
+    "log": "2026-10-10 08:40:00 ERROR Executor - AnalysisException: Column 'customer_id' cannot be resolved. Stage: 32. dataset=shipments",
+    "expected": {
+      "error_class": "AnalysisException",
+      "stage_id": 32,
+      "table": "shipments",
+      "likely_cause": "Unresolved column"
+    }
+  },
+  {
+    "id": 42,
+    "log": "WARN SparkJob: java.lang.OutOfMemoryError: Java heap space\nstageId=35\nfor table daily_metrics",
+    "expected": {
+      "error_class": "OutOfMemoryError",
+      "stage_id": 35,
+      "table": "daily_metrics",
+      "likely_cause": "Java heap exhausted"
+    }
+  },
+  {
+    "id": 43,
+    "log": "FileNotFoundException: File not found at /data/warehouse_load.parquet; Table: warehouse_load;",
+    "expected": {
+      "error_class": "FileNotFoundException",
+      "stage_id": null,
+      "table": "warehouse_load",
+      "likely_cause": "Missing input file"
+    }
+  },
+  {
+    "id": 44,
+    "log": "Spark application failed: java.lang.NullPointerException: Unexpected null reference.  Stage: 41  dataset=billing_events",
+    "expected": {
+      "error_class": "NullPointerException",
+      "stage_id": 41,
+      "table": "billing_events",
+      "likely_cause": "Unexpected null"
+    }
+  },
+  {
+    "id": 45,
+    "log": "2026-10-10 08:44:00 ERROR Executor - TimeoutException: Executor heartbeat timed out. stageId=44. for table user_sessions",
+    "expected": {
+      "error_class": "TimeoutException",
+      "stage_id": 44,
+      "table": "user_sessions",
+      "likely_cause": "Executor timed out"
+    }
+  },
+  {
+    "id": 46,
+    "log": "WARN SparkJob: java.lang.NumberFormatException: For input string: 'abc'\nstage 47",
+    "expected": {
+      "error_class": "NumberFormatException",
+      "stage_id": 47,
+      "table": null,
+      "likely_cause": "Invalid numeric value"
+    }
+  },
+  {
+    "id": 47,
+    "log": "IllegalArgumentException: Invalid partition argument; dataset=transactions; Stage: 3",
+    "expected": {
+      "error_class": "IllegalArgumentException",
+      "stage_id": 3,
+      "table": "transactions",
+      "likely_cause": "Invalid argument"
+    }
+  },
+  {
+    "id": 48,
+    "log": "Spark application failed: java.lang.ClassNotFoundException: com.example.CustomUDF.  stageId=6  for table sales_raw",
+    "expected": {
+      "error_class": "ClassNotFoundException",
+      "stage_id": 6,
+      "table": "sales_raw",
+      "likely_cause": "Missing class"
+    }
+  },
+  {
+    "id": 49,
+    "log": "2026-10-10 08:48:00 ERROR Executor - FetchFailedException: Failed to fetch shuffle block. stage 9. Table: payments",
+    "expected": {
+      "error_class": "FetchFailedException",
+      "stage_id": 9,
+      "table": "payments",
+      "likely_cause": "Shuffle fetch failed"
+    }
+  },
+  {
+    "id": 50,
+    "log": "WARN SparkJob: java.lang.ArithmeticException: / by zero\n\ndataset=employee_records",
+    "expected": {
+      "error_class": "ArithmeticException",
+      "stage_id": null,
+      "table": "employee_records",
+      "likely_cause": "Division by zero"
+    }
+  }
+]

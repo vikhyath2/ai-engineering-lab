@@ -1,0 +1,4 @@
+
+openai==3.28.0
+pydantic==2.14.0
+duckdb==1.5.6
